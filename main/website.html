@@ -1,46 +1,122 @@
 <!DOCTYPE html>
 <html>
+
     <head>
         <title>Movie Works</title>
         <link rel="stylesheet" href="../css/style.css">
         <script src="../main/functions.js"></script>
     </head>
+
+    <!-- The logo and search engine area, as well as list locations. Seperate from the movie results area. -->
     <nav>
+        <!-- Logo area. Self explanatory. Placeholder. -->
         <div id="logo">
             <img src="../images/projector.png" id="logoImage">
         </div>
+        <!-- Area where the juicy tools are. -->
         <div id="tools">
             <button class="movieButtons">Home</button>
             <button class="movieButtons">My List</button>
             <button class="movieButtons">My History</button>
             <div id="movieSearch">
                 <input type="text" id="movieInput" name="movieInput" placeholder="Movie name, genre, availability...">
-                <button id="dropDownButton" name="dropDownButton">Options</button>
+                <input type="image" src="../images/glass.webp" id="searchButton">
             </div>
             <button class="accountButtons">Login</button>
             <button class="accountButtons">Register</button>
         </div>
     </nav>
+
     <body>
+        <!-- The general location for all movie information associated things. -->
+
+        <div id="tutorial">
+            <p id="tutorialHeader">
+                Welcome to the ultimate movie searching app!
+            </p>
+            <p id="tutorialBody">
+                This application was made to make it easy for anyone to do basic and advanced searches for movies across all platforms!
+                <br><br><br>
+                There are no platform and location limitations, allowing you to see every movie available. Illegal material is not allowed.
+                <br><br><br>
+                This was a result of our want to make movie finding easier and less tedious.
+            </p>
+            <button id="tutorialButton">Begin</button>
+        </div>
+
+        <div id="infoSide">
+            <p id="sideTitle">
+                MOVIE TITLE HERE
+            </p>
+            <img src="../images/projector.png" id="sideImage">
+            <div id="sideData">
+                <p class="sideDataPoints">
+                    Average Rating:
+                </p>
+                <br>
+                <p class="sideDataPoints"> 
+                    Genres:
+                </p>
+                <br>
+                <p class="sideDataPoints">
+                    Available on:
+                </p>
+                <br>
+                <p id="sideDesc">
+                    Description: 
+                </p>
+            </div>
+            <button id="moreInfoButton">More Info</button>
+        </div>
+
+        <div id="infoFull">
+
+        </div>
+
         <div id="movieArea">
-            <div class="movieResult">
-            </div>
-            <div class="movieResult">
-            </div>
-            <div class="movieResult">
-            </div>
-            <div class="movieResult">
+            <!-- The tutorial for whenever a person first enters the website. -->
+
+            <!-- Results. Covered by tutorial until accepted. -->
+            <div class="movieSection">
+                <p class="sectionName">
+                    Popular Picks...
+                </p>
+                <div class="movieResult">
+                    <img src="../images/projector.png" class="movieThumbnail">
+                    <div class="movieOptions">
+                        <button class="movieOptionButtons">Add to list!</button>
+                        <button class="movieOptionButtons">Watched</button>
+                        <button class="movieOptionButtons">Block</button>
+                    </div>
+                </div>
             </div>
 
-            <div class="movieResult">
+            <div class="movieSection">
+                <p class="sectionName">
+                    Popular Picks...
+                </p>
+                <div class="movieResult">
+                    <img src="../images/projector.png" class="movieThumbnail">
+                    <div class="movieOptions">
+                        <button class="movieOptionButtons">Add to list!</button>
+                        <button class="movieOptionButtons">Watched</button>
+                        <button class="movieOptionButtons">Block</button>
+                    </div>
+                </div>
             </div>
-            <div class="movieResult">
-            </div>
-            <div class="movieResult">
-            </div>
-            <div class="movieResult">
-            </div>
-            <div class="movieResult">
+
+            <div class="movieSection">
+                <p class="sectionName">
+                    Popular Picks...
+                </p>
+                <div class="movieResult">
+                    <img src="../images/projector.png" class="movieThumbnail">
+                    <div class="movieOptions">
+                        <button class="movieOptionButtons">Add to list!</button>
+                        <button class="movieOptionButtons">Watched</button>
+                        <button class="movieOptionButtons">Block</button>
+                    </div>
+                </div>
             </div>
         </div>
     </body>

@@ -5,12 +5,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch website.html",
+            "name": "Launch Website",
             "type": "firefox",
             "request": "launch",
             "reAttach": true,
-            "url" : "http://localhost:6080/",
-            "firefoxExecutable": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
             "file": "${workspaceFolder}/main/website.html"
         },
         {
@@ -18,7 +16,7 @@
             "type": "firefox",
             "request": "launch",
             "reAttach": true,
-            "url": "http://localhost/website.html",
+            "url": "http://localhost/main/website.html",
             "webRoot": "${workspaceFolder}"
         },
         {

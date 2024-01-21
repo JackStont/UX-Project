@@ -4,7 +4,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    z-index: auto;
+    z-index: 1;
 }
 
 html {
@@ -21,26 +21,20 @@ body {
 /* Nav bar items */
 
 nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 2;
+
     display: flex;
     width: 100%;
-    height: 7.5%;
-    border: solid #2c2b2b;
+    height: 3.5vmax;
     border-bottom: 0;
 }
 
-/* > logo area */
-
 #logo {
-    width: 4%;
-    background-color: white;
-    border: solid #2c2b2b;
-    border-width: 0 3px 0 0;
-}
-
-#logoImage {
-    width: 100%;
-    height: 100%;
-    padding: 2px;
+    width: 30vmin;
+    height: 10vmin;
 }
 
 /* > Searching tools, login, etc area */
@@ -49,60 +43,49 @@ nav {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 96%;
+    width: 100%;
     height: 100%;
-    background-color: #0a0a0a;
+    background-color: #141414;
 }
 
 /* >> input area */
 
 #movieSearch {
-    width: 40%;
-    height: 50%;
-    border: solid #2c2b2b;
-    display: flex;
-    justify-content: space-between;
-    background-color: #808080;
+    width: 40vmax;
+    height: 27.5px;
+    border: solid 1px #dadada;
+    border-radius: 10px;
+    background-color: transparent;
 }
 
 #movieInput {
-    width: 95%;
+    width: 100%;
     height: 100%;
-    border-radius: 0%;
     border: 0;
-    padding-left: 3px;
-    background-color: #909090
-}
-
-#searchButton {
-    width: 5%;
-    height: 100%;
-    border-radius: 0%;
-    border: solid #2c2b2b;
-    padding: .25%;
-    border-width: 0px 0px 0px 3px;
+    padding-left: 5px;
+    background-color: transparent;
+    color: #dadada;
 }
 
 /* > buttons */
 
 .movieButtons {
-    width: 8%;
-    height: 60%;
-    border-radius: 3%;
-    background-color: #808080;
-    border: solid #2c2b2b;
-    font-size: 100%;
+    width: 17.5vmin;
+    height: 6vmin;
+    background-color: #141414;
+    border: 0px;
+    font-size: 20px;
     color: #dadada;
 }
 
 .accountButtons {
-    width: 12.5%;
-    height: 70%;
-    border-radius: 3%;
-    background-color: #808080;
-    border: solid #2c2b2b;
+    width: 25vmin;
+    height: 5vmin;
+    border-radius: 30px;
+    background-color: #dadada;
+    border: solid #dadada;
     font-size: 100%;
-    color: #dadada;
+    color: black;
 }
 
 /* movie results */
@@ -113,12 +96,14 @@ nav {
     display: flex;
     flex-wrap: wrap;
     align-content: space-between;
-    gap: 2% 0%;
+    gap: 2.25% 0%;
     width: 100%;
-    height: 92.5%;
-    padding: 1% 2.5% 1% 2.5%;
+    height: 96.5vmin;
+    top: 3.5vmin;
+    padding: 3.5vmin 2.5vmax 3.5vmin 2.5vmax;
+
     background-color: #141414;
-    border: solid #2c2b2b;
+
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
@@ -128,34 +113,34 @@ nav {
 }
 
 .movieSection {
-    overflow: auto;
     display: flex;
     flex-wrap: wrap;
     align-content: space-between;
-    gap: .25% 6.25%;
-    width: 100%;
-    height: 49%;
-    padding: 1% 2.5% 1% 2.5%;
+    gap: 4vmin 6vmax;
+    width: 100vmax;
+    min-height: 44vmin;
+    padding: 0vmin 0vmax 5vmin 0vmax;
     -ms-overflow-style: none;
     scrollbar-width: none;
     position: relative;
+
 }
 
 .sectionName {
     position: absolute;
-    top: 0%;
-    font-size: 25px;
-    text-decoration: underline;
+    top: 0;
+    left: 6vmin;
+    font-size: 3.5vmin;
     color: white;
 }
 
 .movieResult {
-    width: 15%;
-    height: 99%;
+    width: 28vmin;
+    height: 42vmin;
     background-color: white;
     border: solid #2c2b2b;
     position: relative;
-    top: 4.5%;
+    top: 4vmin;
 }
 
 .movieThumbnail {
@@ -177,8 +162,8 @@ nav {
 }
 
 .movieOptionButtons {
-    width: 25%;
-    height: 70%;
+    width: 33%;
+    height: 3vmax;
     border-radius: 0;
     border: solid black;
 }

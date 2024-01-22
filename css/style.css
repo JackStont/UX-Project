@@ -24,7 +24,7 @@ nav {
     position: fixed;
     top: 0;
     right: 0;
-    z-index: 2;
+    z-index: 3;
 
     display: flex;
     width: 100%;
@@ -43,6 +43,7 @@ nav {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    gap: 0 2.5vmin;
     width: 100%;
     height: 100%;
     background-color: #141414;
@@ -52,7 +53,7 @@ nav {
 
 #movieSearch {
     width: 40vmax;
-    height: 27.5px;
+    height: 4.25vmin;
     border: solid 1px #dadada;
     border-radius: 10px;
     background-color: transparent;
@@ -70,22 +71,23 @@ nav {
 /* > buttons */
 
 .movieButtons {
-    width: 17.5vmin;
+    width: 15.5vmin;
     height: 6vmin;
     background-color: #141414;
     border: 0px;
-    font-size: 20px;
+    font-size: 2.5vmin;
     color: #dadada;
 }
 
 .accountButtons {
     width: 25vmin;
-    height: 5vmin;
+    height: 4.5vmin;
     border-radius: 30px;
     background-color: #dadada;
     border: solid #dadada;
-    font-size: 100%;
+    font-size: 2.5vmin;
     color: black;
+    margin-right: 2vmin;
 }
 
 /* movie results */
@@ -101,9 +103,7 @@ nav {
     height: 96.5vmin;
     top: 3.5vmin;
     padding: 3.5vmin 2.5vmax 3.5vmin 2.5vmax;
-
     background-color: #141414;
-
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
@@ -114,29 +114,28 @@ nav {
 
 .movieSection {
     display: flex;
+    justify-content: left;
     flex-wrap: wrap;
-    align-content: space-between;
-    gap: 4vmin 6vmax;
-    width: 100vmax;
-    min-height: 44vmin;
+    gap: 4vmin 3.492em;
+    width: 100%;
+    min-height: 42vmin;
     padding: 0vmin 0vmax 5vmin 0vmax;
     -ms-overflow-style: none;
     scrollbar-width: none;
     position: relative;
-
 }
 
 .sectionName {
     position: absolute;
     top: 0;
-    left: 6vmin;
+    left: 1vmax;
     font-size: 3.5vmin;
     color: white;
 }
 
 .movieResult {
-    width: 28vmin;
-    height: 42vmin;
+    width: 28vh;
+    height: 42vh;
     background-color: white;
     border: solid #2c2b2b;
     position: relative;
@@ -150,7 +149,7 @@ nav {
 }
 
 .movieOptions {
-    background-color: #7c7c7c;
+    background-color: #141414;
     border-top: solid #2c2b2b;
     height: 20%;
     width: 100%;
@@ -164,7 +163,8 @@ nav {
 .movieOptionButtons {
     width: 33%;
     height: 3vmax;
-    border-radius: 0;
+    font-size: 2vh;
+    border-radius: 10px;
     border: solid black;
 }
 
@@ -174,19 +174,18 @@ nav {
     position: absolute;
     border: solid white;
     background-color: #141414;
-    width: 25%;
+    width: 50vmin;
     height: 92.5%;
     bottom: 0%;
     right: 0%;
-    z-index: 5;
+    z-index: 2;
     display: block;
-
-    display: none;
 }
 
 #sideTitle {
+    margin-top: 1vmin;
     text-align: center;
-    font-size: 30px;
+    font-size: 5vmin;
     color: white;
 }
 
@@ -201,24 +200,30 @@ nav {
 
 #sideData {
     width: 100%;
-    height: 40.5%;
+    height: 33vmin;
 }
 
 #sideDesc {
-    color: white
+    color: white;
+    font-size: 2vmin;
 }
 
 .sideDataPoints {
-    color: white
+    color: white;
+    font-size: 2vmin;
 }
 
 #moreInfoButton {
-    position: relative;
-    width: 20%;
-    height: 5%;
-    border-radius: 0%;
-    left: 0;
-    bottom: -.5%;
+    position: absolute;
+    border: solid 0;
+    background-color: white;
+    width: 10vmin;
+    height: 3vmin;
+    border-radius: 10vmin;
+    left: .1vmin;
+    bottom: .5vmin;
+    font-size: 2vmin
+
 }
 
 /* full information area */

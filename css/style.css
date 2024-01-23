@@ -53,7 +53,7 @@ nav {
 
 #movieSearch {
     width: 40vmax;
-    height: 4.25vmin;
+    height: clamp(0vh, 4.25vmin, 27.5px);
     border: solid 1px #dadada;
     border-radius: 10px;
     background-color: transparent;
@@ -80,8 +80,8 @@ nav {
 }
 
 .accountButtons {
-    width: 25vmin;
-    height: 4.5vmin;
+    width: clamp(0vh, 25vmin, 175px);
+    height: clamp(0vh, 4.5vmin, 40px);
     border-radius: 30px;
     background-color: #dadada;
     border: solid #dadada;
@@ -98,7 +98,6 @@ nav {
     display: flex;
     flex-wrap: wrap;
     align-content: space-between;
-    gap: 2.25% 0%;
     width: 100%;
     height: 96.5vmin;
     top: 3.5vmin;
@@ -114,12 +113,12 @@ nav {
 
 .movieSection {
     display: flex;
-    justify-content: left;
+    justify-content: space-evenly;
     flex-wrap: wrap;
-    gap: 4vmin 3.492em;
+    gap: 4vmin 0vmax;
     width: 100%;
     min-height: 42vmin;
-    padding: 0vmin 0vmax 5vmin 0vmax;
+    margin-bottom: 2.5vmax;
     -ms-overflow-style: none;
     scrollbar-width: none;
     position: relative;
@@ -127,10 +126,11 @@ nav {
 
 .sectionName {
     position: absolute;
-    top: 0;
-    left: 1vmax;
+    top: -.25vmax;
+    left: 4.5vmax;
     font-size: 3.5vmin;
     color: white;
+    font-family: sans-serif;
 }
 
 .movieResult {
@@ -138,6 +138,15 @@ nav {
     height: 42vh;
     background-color: white;
     border: solid #2c2b2b;
+    position: relative;
+    top: 4vmin;
+}
+
+.movieFiller {
+    width: 28vh;
+    height: 42vh;
+    background-color: #141414;
+    border: solid 0;
     position: relative;
     top: 4vmin;
 }
@@ -158,6 +167,7 @@ nav {
     align-items: center;
     justify-content: space-evenly;
     bottom: 0;
+    visibility: hidden;
 }
 
 .movieOptionButtons {
@@ -167,6 +177,7 @@ nav {
     border-radius: 10px;
     border: solid black;
 }
+
 
 /* Additional movie information objects */
 
@@ -180,6 +191,7 @@ nav {
     right: 0%;
     z-index: 2;
     display: block;
+    visibility: hidden;
 }
 
 #sideTitle {

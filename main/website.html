@@ -4,17 +4,17 @@
     <head>
         <title>Movie Works</title>
         <link rel="stylesheet" href="../css/style.css">
-        <script src="../main/functions.js"></script>
+        <script src="../main/functions.js" defer></script>
     </head>
 
     <!-- The logo and search engine area, as well as list locations. Seperate from the movie results area. -->
     <nav>
         <!-- Area where the juicy tools are. -->
         <div id="tools">
-            <img src="../images/image.png" id="logo">
-            <button class="movieButtons">Home</button>
-            <button class="movieButtons">My List</button>
-            <button class="movieButtons">My History</button>
+            <img src="../images/elements/image.png" id="logo">
+            <button class="movieButtons" id="home">Home</button>
+            <button class="movieButtons" id="list">My List</button>
+            <button class="movieButtons" id="history">My History</button>
             <div id="movieSearch">
                 <input type="text" id="movieInput" name="movieInput" placeholder="Movie name, genre, availability...">
             </div>
@@ -43,7 +43,7 @@
             <p id="sideTitle">
                 MOVIE TITLE HERE
             </p>
-            <img src="../images/projector.png" id="sideImage">
+            <img src="../images/elements/projector.png" id="sideImage">
             <div id="sideData">
                 <p class="sideDataPoints">
                     Average Rating:
@@ -65,27 +65,11 @@
         </div>
 
         <div id="infoFull">
-
+            
         </div>
 
         <div id="movieArea">
-            <!-- The tutorial for whenever a person first enters the website. -->
-
-            <!-- Results. Covered by tutorial until accepted. -->
-            <div class="movieSection">
-                <p class="sectionName">
-                    Popular Picks...
-                </p>
-                <div class="movieResult">
-                    <img src="../images/projector.png" class="movieThumbnail">
-                    <div class="movieOptions">
-                        <button class="movieOptionButtons">Add to list!</button>
-                        <button class="movieOptionButtons">Seen it</button>
-                        <button class="movieOptionButtons">Block it</button>
-                    </div>
-                </div>
-            </div>
-
+            <!-- General movie area -->
         </div>
     </body>
 </html>

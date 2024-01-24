@@ -28,7 +28,7 @@ nav {
 
     display: flex;
     width: 100%;
-    height: 3.5vmax;
+    height: 6.5%;
     border-bottom: 0;
 }
 
@@ -77,6 +77,7 @@ nav {
     border: 0px;
     font-size: 2.5vmin;
     color: #dadada;
+    cursor: pointer;
 }
 
 .accountButtons {
@@ -88,6 +89,7 @@ nav {
     font-size: 2.5vmin;
     color: black;
     margin-right: 2vmin;
+    cursor: pointer;
 }
 
 /* movie results */
@@ -99,9 +101,9 @@ nav {
     flex-wrap: wrap;
     align-content: space-between;
     width: 100%;
-    height: 96.5vmin;
-    top: 3.5vmin;
-    padding: 3.5vmin 2.5vmax 3.5vmin 2.5vmax;
+    height: 93.5%;
+    top: 6.5%;
+    padding: 0 2.5vmax 0 2.5vmax;
     background-color: #141414;
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -118,7 +120,7 @@ nav {
     gap: 4vmin 0vmax;
     width: 100%;
     min-height: 42vmin;
-    margin-bottom: 2.5vmax;
+    margin-bottom: 2.25vmax;
     -ms-overflow-style: none;
     scrollbar-width: none;
     position: relative;
@@ -129,17 +131,18 @@ nav {
     top: -.25vmax;
     left: 4.5vmax;
     font-size: 3.5vmin;
-    color: white;
+    color: #dadada;
     font-family: sans-serif;
 }
 
 .movieResult {
     width: 28vh;
     height: 42vh;
-    background-color: white;
+    background-color: #dadada;
     border: solid #2c2b2b;
     position: relative;
     top: 4vmin;
+    cursor: pointer;
 }
 
 .movieFiller {
@@ -176,17 +179,17 @@ nav {
     font-size: 2vh;
     border-radius: 10px;
     border: solid black;
+    cursor: pointer;
 }
-
 
 /* Additional movie information objects */
 
 #infoSide {
     position: absolute;
-    border: solid white;
+    border: solid #dadada;
     background-color: #141414;
-    width: 50vmin;
-    height: 92.5%;
+    width: 56vmin;
+    height: 93.5%;
     bottom: 0%;
     right: 0%;
     z-index: 2;
@@ -195,89 +198,155 @@ nav {
 }
 
 #sideTitle {
-    margin-top: 1vmin;
+    margin-top: .25vmin;
+    margin-bottom: .25vmin;
     text-align: center;
     font-size: 5vmin;
-    color: white;
+    color: #dadada;
+}
+
+#sideImageContainer {
+    position: relative;
+    width: 100%;
+    height: 93.5%;
+}
+
+#sideImageGradient {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #141414;
+    opacity: .8;
+    z-index: 4;
 }
 
 #sideImage {
-    display: block;
-    background-color: white;
+    position: absolute;
+    top: 0px;
+    background-color: #dadada;
     width: 100%;
+    height: 100%;
+    border-top: solid #dadada;
+}
+
+#movieInfo {
+    position: absolute;
+    width: 47%;
+    height: 44%;
+    top: 3%;
+    left: 0px;
+    margin-left: 2%;
+    z-index: 5;
+    background-color: transparent;
+    text-align: center;
+    color: #dadada;
+}
+
+#movieGenres {
+    height: 25%;
+    width: 100%;
+}
+
+#movieRatings {
+    height: 25%;
+    width: 100%;
+}
+
+#movieAvailability {
     height: 50%;
-    border-bottom: solid white;
-    border-top: solid white;
-}
-
-#sideData {
     width: 100%;
-    height: 33vmin;
 }
 
-#sideDesc {
-    color: white;
-    font-size: 2vmin;
+#castInfo {
+    position: absolute;
+    width: 47%;
+    height: 44%;
+    right: 0px;
+    top: 3%;
+    right: 2%;
+    z-index: 5;
+    background-color: transparent;
+    text-align: center;
+    color: #dadada;
 }
 
-.sideDataPoints {
-    color: white;
-    font-size: 2vmin;
+#movieCast {
+    height: 45%;
+    width: 100%;
+}
+
+#movieProducers {
+    height: 45%;
+    width: 100%;
+}
+
+#descInfo {
+    position: absolute;
+    width: 96%;
+    height: 44%;
+    bottom: 7%;
+    left: 2%;
+    z-index: 5;
+    background-color: transparent;
+    color: #dadada;
+    padding-left: 1%;
 }
 
 #moreInfoButton {
     position: absolute;
     border: solid 0;
-    background-color: white;
     width: 10vmin;
     height: 3vmin;
-    border-radius: 10vmin;
     left: .1vmin;
     bottom: .5vmin;
-    font-size: 2vmin
-
-}
-
-/* full information area */
-
-#infoFull {
-    position: absolute;
-    background-color: white;
-    width: 100%;
-    height: 92.5%;
-    z-index: 2;
-    background-color: #141414;
-    border: solid #2c2b2b;
-
-    display: none; /* to hide until javascript */
+    font-size: 2vmin;
+    color: #dadada;
+    background-color: transparent;
 }
 
 /* Tutorial objects */
 
 #tutorial {
+    position: absolute;
+    top: 6.5%;
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: 5% 6.5%;
     width: 100%;
-    height: 100%;
-    visibility: hidden;
-
-    display: none; /* to hide until javascript */
+    height: 93.5%;
+    z-index: 2;
+    background-color: #141414;
 }
 
 #tutorialHeader {
-    font-size: 40px;
+    font-size: 35px;
     font-weight: bold;
     text-align: center;
+    color: #dadada;
+}
+
+#tutorialMovies {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 4vmin 0vmax;
+    width: 100%;
+    min-height: 42vmin;
+    margin-bottom: 2.5vmax;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    position: relative;
 }
 
 
 #tutorialBody {
-    font-size: 30px;
+    font-size: 25px;
     text-align: center;
     width: 40%;
     font-style: italic;
+    color: #dadada;
 }
 
 #tutorialButton {

@@ -12,9 +12,9 @@
         <!-- Area where the juicy tools are. -->
         <div id="tools">
             <img src="../images/elements/image.png" id="logo">
-            <button class="movieButtons" id="home">Home</button>
-            <button class="movieButtons" id="list">My List</button>
-            <button class="movieButtons" id="history">My History</button>
+            <button class="movieButtons" event.stopPropagation(); id="home">Home</button>
+            <button class="movieButtons" event.stopPropagation(); id="list">My List</button>
+            <button class="movieButtons" event.stopPropagation(); id="history">My History</button>
             <div id="movieSearch">
                 <input type="text" id="movieInput" name="movieInput" placeholder="Movie name, genre, availability...">
             </div>
@@ -29,45 +29,54 @@
             <p id="tutorialHeader">
                 Welcome to the ultimate movie searching app!
             </p>
-            <p id="tutorialBody">
+            <div id="tutorialBody">
                 This application was made to make it easy for anyone to do basic and advanced searches for movies across all platforms!
-                <br><br><br>
+                <br>
                 There are no platform and location limitations, allowing you to see every movie available. Illegal material is not allowed.
-                <br><br><br>
-                This was a result of our want to make movie finding easier and less tedious.
-            </p>
-            <button id="tutorialButton">Begin</button>
+                <br>
+                Made by Serge Strizhov as a project for San Francisco State University.
+            </div>
+            <div id="tutorialMovies">
+
+            </div>
         </div>
 
         <div id="infoSide">
             <p id="sideTitle">
                 MOVIE TITLE HERE
             </p>
-            <img src="../images/elements/projector.png" id="sideImage">
-            <div id="sideData">
-                <p class="sideDataPoints">
-                    Average Rating:
-                </p>
-                <br>
-                <p class="sideDataPoints"> 
-                    Genres:
-                </p>
-                <br>
-                <p class="sideDataPoints">
-                    Available on:
-                </p>
-                <br>
-                <p id="sideDesc">
+            <div id="sideImageContainer">
+                <img src="../images/elements/projector.png" id="sideImage">
+                <div id="sideImageGradient"></div>
+                <div id="movieInfo">
+                    -- Genres --
+                    <div id="movieGenres">
+                        Adventure
+                    </div>
+                    -- Ratings --
+                    <div id="movieRatings">
+
+                    </div>
+                    -- Available in --
+                    <div id="movieAvailability">
+
+                    </div>
+                </div>
+                <div id="castInfo">
+                    -- Cast --
+                    <div id="movieCast">
+
+                    </div>
+                    -- Producers --
+                    <div id="movieProducers">
+
+                    </div>
+                </div>
+                <div id="descInfo">
                     Description: 
-                </p>
+                </div>
             </div>
-            <button id="moreInfoButton">More Info</button>
         </div>
-
-        <div id="infoFull">
-            
-        </div>
-
         <div id="movieArea">
             <!-- General movie area -->
         </div>

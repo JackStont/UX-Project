@@ -1,3 +1,5 @@
+<!-- HTML Written completely by Serge Strizhov, finalized on 1/25/2024 under the guidance of Dragutin Petkovic at San Francisco State University. -->
+
 <!DOCTYPE html>
 <html>
 
@@ -9,7 +11,7 @@
 
     <!-- The logo and search engine area, as well as list locations. Seperate from the movie results area. -->
     <nav>
-        <!-- Area where the juicy tools are. -->
+        <!-- Area where the nav buttons are. -->
         <div id="tools">
             <img src="../images/elements/image.png" id="logo">
             <button class="movieButtons" event.stopPropagation(); id="home">Home</button>
@@ -17,13 +19,16 @@
             <button class="movieButtons" event.stopPropagation(); id="history">My History</button>
             <div id="movieSearch">
                 <input type="text" id="movieInput" name="movieInput" placeholder="Movie name, genre, availability...">
+                <div id="nonprofitText">
+                    This is a non-commercial UX design project for SFSU. Readme for more details.
+                </div>
             </div>
             <button id="loginOpenButton">Login</button>
         </div>
     </nav>
 
     <body>
-        <!-- The general location for all movie information associated things. -->
+        <!-- Landing highlight for new users, explains program and it's purpose. -->
         <div id="tutorial">
             <p id="tutorialHeader">
                 Welcome to the ultimate movie searching app!
@@ -40,6 +45,7 @@
             </div>
         </div>
 
+        <!-- Login area -->
         <div id="loginArea">
             <div id="loginUser">
                 <input type="text" id="username" placeholder="Username">
@@ -52,10 +58,14 @@
             <br>
             <button type="button" id="loginButton">Login!</button>
             <div id="loginRegister">
-                New to Movieworks? <button type="button" id="registerButton">Register</button>
+                Forgot password? <a href="#" id="registerLink">Recover</a>
+            </div>
+            <div id="loginRegister">
+                New to Movieworks? <a href="#" id="registerLink">Register</a>
             </div>
         </div>
 
+        <!-- Registration area. -->
         <div id="registerArea">
             <div id="registerUser">
                 <input type="text" id="username" placeholder="Username">
@@ -73,6 +83,7 @@
             <label for="licenseAccept">I accept the license agreement.</label>
             <br>
             <button type="button" id="loginButton">Register!</button>
+            <p id="fieldsRequirement">All fields are mandatory.</p>
         </div>
 
         <div id="logoutArea">
@@ -80,6 +91,7 @@
             <button type="button" id="logoutButton">Logout</button>
         </div>
 
+        <!-- Side information about movies that shows when clicked. -->
         <div id="infoSide">
             <p id="sideTitle">
                 MOVIE TITLE HERE

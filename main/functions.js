@@ -1,4 +1,8 @@
-// Const setup for specific elements
+// Written by Serge Strizhov, finalized on 1/25/2024 under the guidance of Dragutin Petkovic, at San Francisco State University for CSC 699 Credit.
+// Note: This was not written for functionality, but rather, presentation of the user design oriented project. Code only does prewritten work rather than working mutably.
+
+
+// Variables for various elements of the page that move around, show or hide, or have items added to them with flexbox.
 const movieArea = document.getElementById("movieArea");
 const homeButton = document.getElementById("home");
 const listButton = document.getElementById("list");
@@ -27,7 +31,8 @@ var openMovie = NaN;
 var loggedIn = false;
 
 
-// User locale choice movies
+// Locally saved collections of specific movies that show whenever an event happens, such as searching, going home, etc.
+// Listedmovies and seenmovies are both mutable.
 
 var personalRecc = [
     "Based on your previous picks",
@@ -48,7 +53,7 @@ var seenMovies = [
 ]
 
 var searchMovies = [
-    "Based on your search",
+    "Showing 12 results",
     12,
     13,
     14,
@@ -63,7 +68,7 @@ var searchMovies = [
     23
 ]
 
-// Array setup for movie information
+// All the movie information stored in two side by side arrays. One has the name, the other has the image location.
 const movieNames = [
     "Oppenheimer",
     "Django Unleashed",
@@ -122,7 +127,7 @@ const movieThumnails = [
     "hellraiser.jpg"
 ];
 
-// Movie List Holder
+// Movie List Holder. Contains all the pre-designated movie sections that show at specific times.
 
 var categories = [];
 
@@ -148,8 +153,9 @@ categories[1] = dramaMovies = [
     11
 ];
 
-// Prefab Functions
+// Preset functions.
 
+// Creates blank filler so that flexbox doesn't look weird, due to it using align: space evenly. Particularly, 1 movie vs 5 movies being shown on one row.
 function createFiller(category, movieAmount) {
     fillerAmount = (6 - (movieAmount % 6))
     console.log("filler amount: " + fillerAmount);
@@ -168,6 +174,7 @@ function createFiller(category, movieAmount) {
     }
 };
 
+// A function that creates the buttons that show up when you hover over a movie, which allow you to list it, mark it as seen or block it. Only list and seen work.
 function createButtons(movie, category, j) {
     const buttonArea = document.createElement("div");
     buttonArea.className = "movieOptions";
@@ -211,7 +218,6 @@ function createButtons(movie, category, j) {
 
     seenButton.addEventListener("click", e => {
         e.stopPropagation();
-        console.log("clicked");
         seenMovies.push(category[j]);
     });
 
@@ -222,6 +228,7 @@ function createButtons(movie, category, j) {
     movie.appendChild(buttonArea);
 };
 
+// Makes a movie clickable to open it's bigger info. Could probably be merged with createButtons, but as its a user design project, I am not too worried about it.
 function createClickable(movie, list, index) {
     movie.addEventListener("click", e => {
         e.stopPropagation();
@@ -239,6 +246,7 @@ function createClickable(movie, list, index) {
     });
 };
 
+// Function that loads the home page and it's relevant movie items. Calls upon previous functions.
 function homeLoad() {
     tutorialArea.style.visibility = "hidden";
     movieArea.innerHTML = "";
@@ -281,8 +289,11 @@ function homeLoad() {
         movieArea.appendChild(category);
     };
 }
-// First load script 
 
+
+
+
+// Landing popup script. Doesn't work properly.
 for (let i = 0; i < 1; i++) {
     const category = document.createElement("div");
     category.className = "movieSection";
@@ -305,8 +316,10 @@ for (let i = 0; i < 1; i++) {
     tutorialMovieArea.appendChild(category);
 };
 
+// Loads the home page upon immediately entering page. Removing it allows tutorial to be seen. Very odd.
 homeLoad();
 
+// Function that triggers upon pressing enter into the input movie search area. Shows a predermined set of horror movies.
 inputArea.addEventListener("keyup", e => {
     if (e.key === 'Enter' || e.keyCode === 13) {
         tutorialArea.style.visibility = "hidden";
@@ -329,8 +342,7 @@ inputArea.addEventListener("keyup", e => {
 });
 
 
-// List script
-
+// Shows all the listed personal movies.
 listButton.onclick = function() {
     tutorialArea.style.visibility = "hidden";
     movieArea.innerHTML = "";
@@ -350,8 +362,7 @@ listButton.onclick = function() {
     movieArea.appendChild(category);
 };
 
-// History script
-
+// Shows all the marked as seen movies.
 historyButton.onclick = function() {
     tutorialArea.style.visibility = "hidden";
     movieArea.innerHTML = "";
@@ -370,11 +381,10 @@ historyButton.onclick = function() {
     movieArea.appendChild(category);
 };
 
-// Home script
+// Home script, sends back to home when home button is clicked.
 homeButton.addEventListener("click", homeLoad);
 
-// Login Shenanigans
-
+// Login and register items. Doesn't actually register the user nor login, just acts with predetermined values.
 loginOpenButton.addEventListener("click", e => {
     if (registerArea.style.visibility == "visible") {
         registerArea.style.visibility = "hidden";

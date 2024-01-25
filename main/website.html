@@ -18,13 +18,12 @@
             <div id="movieSearch">
                 <input type="text" id="movieInput" name="movieInput" placeholder="Movie name, genre, availability...">
             </div>
-            <button class="accountButtons">Login</button>
+            <button id="loginOpenButton">Login</button>
         </div>
     </nav>
 
     <body>
         <!-- The general location for all movie information associated things. -->
-
         <div id="tutorial">
             <p id="tutorialHeader">
                 Welcome to the ultimate movie searching app!
@@ -41,6 +40,22 @@
             </div>
         </div>
 
+        <div id="loginArea">
+            <div id="loginUser">
+                <input type="text" id="username" placeholder="Username">
+            </div>
+            <div id="loginPassword">
+                <input type="password" id="password" placeholder="Password">
+            </div>
+            <input type="checkbox" id="loginRemember" name="loginRemember">
+            <label for="loginRemember">Remember Me</label>
+            <br>
+            <button type="button" id="loginButton">Login!</button>
+            <div id="loginRegister">
+                New to Movieworks? <button type="button" id="registerButton">Register</button>
+            </div>
+        </div>
+
         <div id="infoSide">
             <p id="sideTitle">
                 MOVIE TITLE HERE
@@ -51,29 +66,42 @@
                 <div id="movieInfo">
                     -- Genres --
                     <div id="movieGenres">
-                        Adventure
+                        Adventure, Horror, Comedy, Drama
                     </div>
                     -- Ratings --
                     <div id="movieRatings">
-
+                        IMBd: ★★★★★
+                        <br>
+                        Rotten Tomatoes: ★★★★★
                     </div>
                     -- Available in --
                     <div id="movieAvailability">
-
+                        Netflix
+                        <br>
+                        Disney+
+                        <br>
+                        HBO Max
                     </div>
                 </div>
                 <div id="castInfo">
                     -- Cast --
                     <div id="movieCast">
-
+                        John Doe as John Doe
+                        <br>
+                        Jane Doe as Jane Doe
+                        <br>
+                        John Doe as John Doe
                     </div>
                     -- Producers --
                     <div id="movieProducers">
-
+                        John Doe as Lead Producer
+                        <br>
+                        Jane Doe as Scriptwriter
+                        
                     </div>
                 </div>
                 <div id="descInfo">
-                    Description: 
+                    Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin sagittis dolor at elementum. Integer eget vestibulum eros. Praesent condimentum ligula bibendum molestie interdum. Donec vel nibh ipsum. Aenean a erat a odio eleifend lacinia. Aliquam pharetra dui massa, sed maximus orci malesuada in. Mauris in libero ullamcorper, varius diam sit amet, venenatis est. Curabitur ipsum orci, semper id blandit sed, posuere sed enim. Morbi eget tellus vel ligula suscipit accumsan ut in nisl. Phasellus interdum tortor non varius scelerisque. Nullam sagittis velit elit, sed maximus eros convallis sed. In a facilisis orci. 
                 </div>
             </div>
         </div>

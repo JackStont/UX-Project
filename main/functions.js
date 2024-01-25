@@ -9,15 +9,29 @@ const inputArea = document.getElementById("movieInput");
 const tutorialArea = document.getElementById("tutorial");
 const tutorialMovieArea = document.getElementById("tutorialMovies");
 
+const loginOpenButton = document.getElementById("loginOpenButton");
+const loginArea = document.getElementById("loginArea");
+const loginButton = document.getElementById("loginButton");
+
 const shortInfo = document.getElementById("infoSide");
 const shortTitle = document.getElementById("sideTitle");
 const shortImage = document.getElementById("sideImage");
 
 var openMovie = NaN;
-var isOpen = false;
+var loggedIn = false;
 
 
 // User locale choice movies
+
+var personalRecc = [
+    "Based on your previous picks",
+    19,
+    6,
+    3,
+    5,
+    10,
+    1,
+];
 
 var listedMovies = [
     "Your watchlist"
@@ -108,7 +122,7 @@ var categories = [];
 
 // Prefixed movie categories
 categories[0] = popularMovies = [
-    "Popular Picks",
+    "Popular",
     0,
     1,
     2,
@@ -148,7 +162,7 @@ function createFiller(category, movieAmount) {
     }
 };
 
-function createButtons(movie, categories, i, j) {
+function createButtons(movie, category, j) {
     const buttonArea = document.createElement("div");
     buttonArea.className = "movieOptions";
     const listButton = document.createElement("button");
@@ -163,11 +177,10 @@ function createButtons(movie, categories, i, j) {
 
     movie.addEventListener("click", e => {
         e.stopPropagation();
-        if (isOpen == false || openMovie != categories[i][j]) {
-            isOpen = true;
-            openMovie = categories[i][j];
-            shortTitle.innerText = movieNames[categories[i][j]];
-            shortImage.src = '../images/moviePosters/' + movieThumnails[categories[i][j]];
+        if (shortInfo.style.visibility == "hidden" || openMovie != category[j]) {
+            openMovie = category[j];
+            shortTitle.innerText = movieNames[category[j]];
+            shortImage.src = '../images/moviePosters/' + movieThumnails[category[j]];
             shortInfo.style.visibility = "visible";
         }
         else {
@@ -206,8 +219,7 @@ function createButtons(movie, categories, i, j) {
 function createClickable(movie, list, index) {
     movie.addEventListener("click", e => {
         e.stopPropagation();
-        if (isOpen == false || openMovie != list[index]) {
-            isOpen = true;
+        if (shortInfo.style.visibility == "hidden" || openMovie != list[index]) {
             openMovie = list[index];
             shortTitle.innerText = movieNames[list[index]];
             shortImage.src = '../images/moviePosters/' + movieThumnails[list[index]];
@@ -221,6 +233,48 @@ function createClickable(movie, list, index) {
     });
 };
 
+function homeLoad() {
+    tutorialArea.style.visibility = "hidden";
+    movieArea.innerHTML = "";
+
+    if (loggedIn) {
+        const category = document.createElement("div");
+        category.className = "movieSection";
+        category.innerHTML = '<p class="sectionName">' + personalRecc[0] + '</p>';
+        for (let i = 1; i < personalRecc.length; i++) {
+            const movie = document.createElement("div");
+            movie.className = "movieResult";
+            movie.innerHTML = '<img src="../images/moviePosters/' + movieThumnails[personalRecc[i]] + '" class="movieThumbnail">';
+            createButtons(movie, personalRecc, i)
+            category.appendChild(movie);
+        };
+    
+        createFiller(category, personalRecc.length - 1);
+        movieArea.appendChild(category);
+    }
+
+    for (let i = 0; i < categories.length; i++) {
+        const category = document.createElement("div");
+        category.className = "movieSection";
+        category.innerHTML = '<p class="sectionName">' + categories[i][0] + '</p>';
+        var amount = 0;
+        for (let j = 1; j < categories[i].length; j++) {
+            if (amount == 7) {
+                break;
+            }
+            amount += 1;
+            const movie = document.createElement("div");
+            movie.className = "movieResult";
+            movie.innerHTML = '<img src="../images/moviePosters/' + movieThumnails[categories[i][j]] + '" class="movieThumbnail">';
+    
+            createButtons(movie, categories[i], j);
+    
+            category.appendChild(movie);
+        };
+        createFiller(category, amount);
+        movieArea.appendChild(category);
+    };
+}
 // First load script 
 
 for (let i = 0; i < 1; i++) {
@@ -237,7 +291,7 @@ for (let i = 0; i < 1; i++) {
         movie.className = "movieResult";
         movie.innerHTML = '<img src="../images/moviePosters/' + movieThumnails[categories[i][j]] + '" class="movieThumbnail">';
 
-        createButtons(movie, categories, i, j);
+        createButtons(movie, categories[i], j);
 
         category.appendChild(movie);
     };
@@ -245,27 +299,7 @@ for (let i = 0; i < 1; i++) {
     tutorialMovieArea.appendChild(category);
 };
 
-for (let i = 0; i < categories.length; i++) {
-    const category = document.createElement("div");
-    category.className = "movieSection";
-    category.innerHTML = '<p class="sectionName">' + categories[i][0] + '</p>';
-    var amount = 0;
-    for (let j = 1; j < categories[i].length; j++) {
-        if (amount == 7) {
-            break;
-        }
-        amount += 1;
-        const movie = document.createElement("div");
-        movie.className = "movieResult";
-        movie.innerHTML = '<img src="../images/moviePosters/' + movieThumnails[categories[i][j]] + '" class="movieThumbnail">';
-
-        createButtons(movie, categories, i, j);
-
-        category.appendChild(movie);
-    };
-    createFiller(category, amount);
-    movieArea.appendChild(category);
-};
+homeLoad();
 
 inputArea.addEventListener("keyup", e => {
     if (e.key === 'Enter' || e.keyCode === 13) {
@@ -331,30 +365,24 @@ historyButton.onclick = function() {
 };
 
 // Home script
- homeButton.onclick = function() {
-    tutorialArea.style.visibility = "hidden";
-    movieArea.innerHTML = "";
+homeButton.addEventListener("click", homeLoad);
 
-    for (let i = 0; i < categories.length; i++) {
-        const category = document.createElement("div");
-        category.className = "movieSection";
-        category.innerHTML = '<p class="sectionName">' + categories[i][0] + '</p>';
-        var amount = 0;
-        for (let j = 1; j < categories[i].length; j++) {
-            if (amount == 7) {
-                break;
-            }
-            amount += 1;
-            const movie = document.createElement("div");
-            movie.className = "movieResult";
-            movie.innerHTML = '<img src="../images/moviePosters/' + movieThumnails[categories[i][j]] + '" class="movieThumbnail">';
-    
-            createButtons(movie, categories, i, j);
-    
-            category.appendChild(movie);
-        };
-        createFiller(category, amount);
-        movieArea.appendChild(category);
-    };
- }
+loginOpenButton.addEventListener("click", e => {
+    if (loginArea.style.visibility == "hidden") {
+        loginArea.style.visibility = "visible";
+    }
+    else {
+        loginArea.style.visibility = "hidden";
+    }
+});
 
+loginButton.addEventListener("click", e => {
+    loggedIn = true;
+    homeLoad();
+    loginArea.style.visibility = "hidden";
+    loginOpenButton.innerText = "Jack";
+});
+
+movieArea.addEventListener("click", e => {
+    shortInfo.style.visibility = "hidden";
+});

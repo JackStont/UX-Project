@@ -13,6 +13,12 @@ const loginOpenButton = document.getElementById("loginOpenButton");
 const loginArea = document.getElementById("loginArea");
 const loginButton = document.getElementById("loginButton");
 
+const registerButton = document.getElementById("registerButton");
+const registerArea = document.getElementById("registerArea");
+
+const logoutArea = document.getElementById("logoutArea");
+const logoutButton = document.getElementById("logoutButton");
+
 const shortInfo = document.getElementById("infoSide");
 const shortTitle = document.getElementById("sideTitle");
 const shortImage = document.getElementById("sideImage");
@@ -200,13 +206,13 @@ function createButtons(movie, category, j) {
 
     listButton.addEventListener("click", e => {
         e.stopPropagation();
-        listedMovies.push(categories[i][j]);
+        listedMovies.push(category[j]);
     });
 
     seenButton.addEventListener("click", e => {
         e.stopPropagation();
         console.log("clicked");
-        seenMovies.push(categories[i][j]);
+        seenMovies.push(category[j]);
     });
 
     buttonArea.appendChild(listButton);
@@ -313,7 +319,7 @@ inputArea.addEventListener("keyup", e => {
             const movie = document.createElement("div");
             movie.className = "movieResult";
             movie.innerHTML = '<img src="../images/moviePosters/' + movieThumnails[searchMovies[i]] + '" class="movieThumbnail">';
-            createClickable(movie, searchMovies, i)
+            createButtons(movie, searchMovies, i)
             category.appendChild(movie);
         };
     
@@ -367,13 +373,30 @@ historyButton.onclick = function() {
 // Home script
 homeButton.addEventListener("click", homeLoad);
 
+// Login Shenanigans
+
 loginOpenButton.addEventListener("click", e => {
-    if (loginArea.style.visibility == "hidden") {
-        loginArea.style.visibility = "visible";
+    if (registerArea.style.visibility == "visible") {
+        registerArea.style.visibility = "hidden";
+    }
+    else if (loginArea.style.visibility == "hidden") {
+        if (!loggedIn) {
+            loginArea.style.visibility = "visible";
+        }
+        else {
+            logoutArea.style.visibility = "visible";
+        }
     }
     else {
         loginArea.style.visibility = "hidden";
     }
+});
+
+logoutButton.addEventListener("click", e => {
+    loggedIn = false;
+    homeLoad();
+    logoutArea.style.visibility = "hidden";
+    loginOpenButton.innerText = "Login";
 });
 
 loginButton.addEventListener("click", e => {
@@ -385,4 +408,9 @@ loginButton.addEventListener("click", e => {
 
 movieArea.addEventListener("click", e => {
     shortInfo.style.visibility = "hidden";
+});
+
+registerButton.addEventListener("click", e => {
+    loginArea.style.visibility = "hidden";
+    registerArea.style.visibility = "visible";
 });

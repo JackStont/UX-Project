@@ -62,12 +62,6 @@ nav {
     position: relative;
 }
 
-#nonprofitText {
-    color: #dadada;
-    margin-top: 10px;
-    margin-left: 10px;
-}
-
 #movieInput {
     width: 100%;
     height: 100%;
@@ -208,7 +202,7 @@ nav {
     left: 0;
     margin-left: auto;
     margin-right: auto;
-    z-index: 2;
+    z-index: 3;
     display: block;
     visibility: hidden;
 }
@@ -495,6 +489,8 @@ nav {
     border: solid #141414;
     border-radius: 10px;
     color: #dadada;
+
+    visibility: hidden;
 }
 
 #registerUser {
@@ -541,4 +537,11 @@ nav {
 
 #fieldsRequirement {
     margin-left: 25%;
+}
+
+
+#nonprofitText {
+    color: #dadada;
+    margin-top: 10px;
+    margin-left: 10px;
 }

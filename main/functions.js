@@ -45,7 +45,7 @@ var personalRecc = [
 ];
 
 var listedMovies = [
-    "Your watchlist"
+    "Your list"
 ];
 
 var seenMovies = [

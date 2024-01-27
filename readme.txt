@@ -12,4 +12,6 @@ Bootstrap or similar software was NOT used in this project to learn more about r
 
 Thank you for your time!
 
+Description of project: This is a website meant to help with finding movies across multiple platforms, rather than having to scrounge around them all to find something you are interested in.
+
 Serge Strizhov
